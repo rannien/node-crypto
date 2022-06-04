@@ -1,0 +1,31 @@
+{
+  "name": "node-crypto",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "type": "module",
+  "source": "src/index.js",
+  "module": "dist/module.js",
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rannien/node-crypto.git"
+  },
+  "author": "rannien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rannien/node-crypto/issues"
+  },
+  "homepage": "https://github.com/rannien/node-crypto#readme",
+  "dependencies": {
+    "@aws-crypto/sha256-js": "^2.0.1"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0",
+    "parcel": "^2.6.0"
+  }
+}
