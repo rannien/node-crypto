@@ -9,7 +9,7 @@
   "scripts": {
     "watch": "parcel watch",
     "build": "parcel build",
-    "test": "jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
   "repository": {
     "type": "git",
