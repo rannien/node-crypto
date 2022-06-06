@@ -9,13 +9,16 @@ export class Blockchain {
     return new Block(0, 'first block on the chain', '0');
   }
 
-  getTheLatestBlock() {
+  getLatestBlock() {
     return this.blockchain[this.blockchain.length - 1];
   }
 
+  getLatestBlockHash() {
+    return this.getLatestBlock().hash;
+  }
+
   addNewBlock(newBlock) {
-    newBlock.previousHash = this.getLatestBlock().hash;
-    newBlock.hash = newBlock.generateHash();
+    newBlock.previousHash = this.getLatestBlockHash();
     this.blockchain.push(newBlock);
   }
 
@@ -23,13 +26,15 @@ export class Blockchain {
     for (let i = 1; i < this.blockchain.length; i++) {
       const currentBlock = this.blockchain[i];
       const previousBlock = this.blockchain[i - 1];
+
       if (currentBlock.hash !== currentBlock.generateHash()) {
         return false;
       }
+      
       if (currentBlock.previousHash !== previousBlock.hash) {
         return false;
       }
-      return true;
     }
+    return true;
   }
 }
